@@ -21,7 +21,12 @@ def server_program():
     client=docker.from_env()
     for image in client.images.list():
         print (image.id)
-        
+        break
+    
+      client=docker.from_env()
+    for image in client.images.list():
+        print (image.id)
+        break
     while True:
         # receive data stream. it won't accept data packet greater than 1024 bytes
         data = conn.recv(1024).decode()
